@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>~~*~~ EVOLVED SERVICES INC ~~*~~ Enterprise Infrastructure Solutions ~~*~~</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #000011;
+      background-image:
+        radial-gradient(1px 1px at 10% 20%, #ffffff44 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 60%, #ffffff33 0%, transparent 100%),
+        radial-gradient(1px 1px at 50% 10%, #ffffff55 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 80%, #ffffff33 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 40%, #ffffff44 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 85%, #ffffff22 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 15%, #ffffff44 0%, transparent 100%),
+        radial-gradient(2px 2px at 45% 50%, #ffffff22 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 30%, #ffffff55 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 45%, #ffffff33 0%, transparent 100%);
+      background-size: 200px 200px;
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      color: #ffff00;
+      min-height: 100vh;
+      padding-bottom: 40px;
+    }
+
+    /* RAINBOW TEXT */
+    @keyframes rainbow {
+      0%   { color: #ff0000; }
+      14%  { color: #ff8800; }
+      28%  { color: #ffff00; }
+      42%  { color: #00ff00; }
+      57%  { color: #00ffff; }
+      71%  { color: #0088ff; }
+      85%  { color: #ff00ff; }
+      100% { color: #ff0000; }
+    }
+    .rainbow { animation: rainbow 3s linear infinite; display: inline-block; }
+
+    @keyframes rainbow-slow {
+      0%   { color: #ff6699; }
+      25%  { color: #ffff00; }
+      50%  { color: #00ffff; }
+      75%  { color: #ff99ff; }
+      100% { color: #ff6699; }
+    }
+    .rainbow-slow { animation: rainbow-slow 5s linear infinite; }
+
+    /* BLINK */
+    .blink { animation: blink 0.8s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .blink-slow { animation: blink 1.5s step-end infinite; }
+
+    /* SPARKLE */
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(1.4); }
+    }
+    .sparkle { animation: sparkle 1.2s ease-in-out infinite; display: inline-block; }
+
+    /* MARQUEE */
+    .marquee-wrap {
+      background: #000000;
+      border-top: 3px solid #ff00ff;
+      border-bottom: 3px solid #ff00ff;
+      padding: 4px 0;
+      overflow: hidden;
+      width: 100%;
+    }
+    .marquee-inner {
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+      display: inline-block;
+      font-size: 14px;
+      font-family: 'Comic Sans MS', cursive;
+      font-weight: bold;
+      color: #00ffff;
+    }
+    @keyframes marquee { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+
+    /* LAYOUT */
+    .page { max-width: 800px; margin: 0 auto; padding: 10px; }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      padding: 20px 10px;
+      background: linear-gradient(180deg, #110022 0%, #000011 100%);
+      border: 3px solid #ff00ff;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .header-stars {
+      font-size: 20px;
+      color: #ffff00;
+      margin-bottom: 6px;
+      letter-spacing: 4px;
+    }
+    .header h1 {
+      font-family: 'VT323', monospace;
+      font-size: 56px;
+      line-height: 1;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 3px 3px 0 #000033;
+      margin-bottom: 6px;
+    }
+    .header-sub {
+      font-size: 13px;
+      color: #ff99ff;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .header-tagline {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+    .header-tagline span { color: #00ffff; text-decoration: underline; }
+    .header-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+    .nav-gem {
+      background: linear-gradient(135deg, #660066, #cc00cc);
+      border: 2px solid #ff66ff;
+      color: #ffffff;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 12px;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .nav-gem:hover { background: linear-gradient(135deg, #990099, #ff00ff); color: #ffff00; }
+
+    /* HR DIVIDERS */
+    .hr-rainbow {
+      height: 4px;
+      background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00ff00, #00ffff, #0088ff, #ff00ff, #ff0000);
+      border: none;
+      margin: 10px 0;
+    }
+    .hr-fire {
+      height: 3px;
+      background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #ff8800, #ff0000);
+      border: none;
+      margin: 10px 0;
+    }
+    .hr-ice {
+      height: 3px;
+      background: linear-gradient(90deg, #0000ff, #0088ff, #00ffff, #0088ff, #0000ff);
+      border: none;
+      margin: 10px 0;
+    }
+
+    /* SECTION BOXES */
+    .box {
+      background: #0a0015;
+      border: 2px solid #ff00ff;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    .box-cyan { border-color: #00ffff; }
+    .box-yellow { border-color: #ffff00; }
+    .box-green { border-color: #00ff00; }
+    .box-red { border-color: #ff4444; }
+
+    .box-title {
+      font-family: 'VT323', monospace;
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    /* TABLE LAYOUT */
+    .two-col-table { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .three-col-table { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    @media (max-width: 600px) { .two-col-table, .three-col-table { grid-template-columns: 1fr; } }
+
+    /* SERVICE CELLS */
+    .service-cell {
+      background: #050010;
+      border: 1px solid #9900cc;
+      padding: 8px;
+      text-align: center;
+    }
+    .service-cell-title {
+      font-size: 12px;
+      font-weight: bold;
+      color: #ffff00;
+      margin-bottom: 4px;
+    }
+    .service-cell-body {
+      font-size: 11px;
+      color: #cc99ff;
+      line-height: 1.5;
+    }
+    .service-badge {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 10px;
+      background: #660000;
+      color: #ffaaaa;
+      border: 1px solid #ff4444;
+      padding: 1px 6px;
+    }
+
+    /* STATS */
+    .stats-row { display: flex; gap: 6px; margin: 8px 0; }
+    .stat-gem {
+      flex: 1;
+      background: #050020;
+      border: 2px solid #0088ff;
+      padding: 8px 4px;
+      text-align: center;
+    }
+    .stat-gem-num {
+      font-family: 'VT323', monospace;
+      font-size: 30px;
+      color: #00ffff;
+      line-height: 1;
+    }
+    .stat-gem-lbl {
+      font-size: 9px;
+      color: #8888ff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* GUESTBOOK / TESTIMONIALS */
+    .testi-entry {
+      background: #050015;
+      border-left: 4px solid #ff00ff;
+      padding: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .testi-entry blockquote {
+      color: #ddccff;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 4px;
+    }
+    .testi-sig { color: #ff99ff; font-size: 11px; font-weight: bold; }
+    .testi-loc { color: #9966cc; font-size: 10px; }
+
+    /* UNDER CONSTRUCTION */
+    .under-construction {
+      background: repeating-linear-gradient(45deg, #ffff00 0, #ffff00 10px, #000000 10px, #000000 20px);
+      padding: 3px;
+      margin: 10px 0;
+    }
+    .uc-inner {
+      background: #000000;
+      text-align: center;
+      padding: 8px;
+    }
+    .uc-text {
+      font-size: 14px;
+      font-weight: bold;
+      color: #ffff00;
+    }
+
+    /* WEBRINGS / BADGES */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    .badge {
+      background: #110022;
+      border: 1px solid #9900cc;
+      padding: 3px 8px;
+      font-size: 10px;
+      color: #cc99ff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* HIT COUNTER */
+    .hit-counter {
+      display: inline-block;
+      background: #000000;
+      color: #00ff00;
+      font-family: 'VT323', 'Courier New', monospace;
+      font-size: 24px;
+      padding: 2px 10px;
+      border: 2px solid #00ff00;
+      letter-spacing: 4px;
+    }
+
+    /* WEBRING */
+    .webring {
+      background: #0a0015;
+      border: 2px dashed #9900cc;
+      padding: 8px;
+      text-align: center;
+      font-size: 11px;
+      color: #cc99ff;
+      margin: 10px 0;
+    }
+    .webring a { color: #ff99ff; text-decoration: underline; }
+
+    /* EMAIL LINK */
+    .email-btn {
+      display: inline-block;
+      background: #003300;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 14px;
+      text-decoration: none;
+      cursor: pointer;
+      margin: 4px;
+    }
+    .email-btn:hover { background: #005500; color: #ffff00; }
+
+    /* MIDI NOTICE */
+    .midi-notice {
+      background: #110022;
+      border: 1px solid #660066;
+      padding: 6px 10px;
+      font-size: 10px;
+      color: #9966cc;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    /* ANIMATED STAR */
+    @keyframes twinkle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+    .star { animation: twinkle 2s ease-in-out infinite; }
+    .star:nth-child(2) { animation-delay: 0.3s; }
+    .star:nth-child(3) { animation-delay: 0.7s; }
+    .star:nth-child(4) { animation-delay: 1.1s; }
+    .star:nth-child(5) { animation-delay: 1.5s; }
+
+    /* PROGRESS BARS */
+    .skill-bar-wrap { margin: 4px 0; }
+    .skill-bar-label { font-size: 11px; color: #ccaaff; margin-bottom: 2px; }
+    .skill-bar-bg { background: #110022; border: 1px solid #660099; height: 12px; }
+    .skill-bar-fill { height: 100%; background: linear-gradient(90deg, #9900cc, #ff00ff); }
+
+    /* GUESTBOOK FORM */
+    .guestbook-form input, .guestbook-form textarea {
+      background: #000011;
+      border: 1px solid #9900cc;
+      color: #ffff00;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 12px;
+      padding: 4px;
+      width: 100%;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .guestbook-form textarea { height: 60px; resize: none; }
+    .submit-btn {
+      background: #660099;
+      border: 2px solid #ff00ff;
+      color: #ffffff;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 16px;
+      cursor: pointer;
+    }
+    .submit-btn:hover { background: #9900cc; }
+
+    p { line-height: 1.6; }
+    a { color: #ff99ff; }
+    a:visited { color: #cc66ff; }
+    strong { color: #ffff00; }
+  </style>
+</head>
+<body>
+
+  <!-- MIDI NOTICE -->
+  <div class="midi-notice">
+    🎵 <em>This page sounds best with MIDI enabled. You are listening to: "The Dude Abides (Instrumental Remix)" — <span class="blink-slow">NOW PLAYING</span></em> 🎵
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-inner">
+      ~*~ WELCOME TO EVOLVED SERVICES INC ~*~ THE DATA ABIDES ~*~ ENTERPRISE INFRASTRUCTURE SOLUTIONS ~*~ EST. 2015 ~*~ THE RUG TIES THE ROOM TOGETHER ~*~ THIS IS NOT NAM ~*~ THERE ARE RULES ~*~ MARK IT ~*~ NOBODY MESSES WITH THE RUG ~*~ 99.9% UPTIME ~*~ WE ARE NOT THE WORLD'S MOST COMPLICATED PEOPLE ~*~&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-stars">
+        <span class="star">★</span>
+        <span class="star">✦</span>
+        <span class="star">★</span>
+        <span class="star">✦</span>
+        <span class="star">★</span>
+      </div>
+      <h1 class="rainbow-slow">EVOLVED SERVICES</h1>
+      <div class="header-sub">~~ Enterprise Infrastructure Solutions ~~ Est. 2015 ~~</div>
+      <div class="header-tagline">
+        Infrastructure that really <span>ties the room together</span> <span class="sparkle">✨</span>
+      </div>
+      <div class="header-stars" style="margin-bottom:12px;">
+        <span class="star">✦</span>
+        <span class="star">★</span>
+        <span class="star">✦</span>
+        <span class="star">★</span>
+        <span class="star">✦</span>
+      </div>
+      <div class="header-nav">
+        <a href="#about" class="nav-gem">~About~</a>
+        <a href="#services" class="nav-gem">~Services~</a>
+        <a href="#testimonials" class="nav-gem">~Guestbook~</a>
+        <a href="#team" class="nav-gem">~The Team~</a>
+        <a href="#contact" class="nav-gem">~Contact~</a>
+      </div>
+    </div>
+
+    <hr class="hr-rainbow">
+
+    <!-- UNDER CONSTRUCTION -->
+    <div class="under-construction">
+      <div class="uc-inner">
+        <div class="uc-text">🚧 <span class="blink">UNDER CONSTRUCTION</span> 🚧</div>
+        <div style="font-size:10px;color:#888;margin-top:3px;">Disaster Recovery section coming soon!! Check back later!!</div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="box box-cyan" id="about">
+      <div class="box-title" style="color:#00ffff;">~*~ About Evolved Services ~*~</div>
+      <hr class="hr-ice">
+      <div class="two-col-table">
+        <div>
+          <p style="font-size:12px;color:#ccccff;margin-bottom:8px;">
+            <strong>Welcome!!</strong> You have found the official homepage of <strong>Evolved Services Inc.</strong>, the premier enterprise infrastructure solutions provider for organizations that demand reliability, scalability, and uninterrupted uptime.
+          </p>
+          <p style="font-size:12px;color:#ccccff;margin-bottom:8px;">
+            We were founded on the principle that infrastructure does not require complexity. It requires <strong>discipline</strong>. And documentation. And frankly, a <strong>rug</strong>.
+          </p>
+          <p style="font-size:12px;color:#ccccff;">
+            We have seen organizations fall because they had no plan, no redundancy, and no rug. <strong>We fix that.</strong> We are not the world's most complicated people. The data abides. <span class="blink-slow">:)</span>
+          </p>
+        </div>
+        <div>
+          <div style="background:#050020;border:2px solid #0088ff;padding:10px;font-family:'VT323',monospace;font-size:15px;color:#00ffff;line-height:1.8;">
+            C:\EVOLVED\README.TXT<br>
+            ========================<br>
+            <span style="color:#ffffff;">&gt;</span> Founded: 2015<br>
+            <span style="color:#ffffff;">&gt;</span> Location: Malibu, CA<br>
+            <span style="color:#ffffff;">&gt;</span> Uptime: 99.9%<br>
+            <span style="color:#ffffff;">&gt;</span> Rugs Violated: 0<br>
+            <span style="color:#ffffff;">&gt;</span> Status: ABIDING<br>
+            <span style="color:#ffffff;">&gt;</span> <span class="blink">_</span>
+          </div>
+          <div style="margin-top:8px;">
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label">Storage Architecture</div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:100%"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label">Rug Cohesion</div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:100%"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label">Nihilist Threat Detection</div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:94%"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-label">Taking It Easy</div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:100%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr-rainbow">
+
+    <!-- STATS -->
+    <div class="box" id="stats">
+      <div class="box-title" style="color:#ff99ff;">~~ Our Numbers Speak For Themselves!! ~~</div>
+      <div class="stats-row">
+        <div class="stat-gem"><div class="stat-gem-num">99.9%</div><div class="stat-gem-lbl">Uptime SLA</div></div>
+        <div class="stat-gem"><div class="stat-gem-num">24/7</div><div class="stat-gem-lbl">NOC Coverage</div></div>
+        <div class="stat-gem"><div class="stat-gem-num">10+</div><div class="stat-gem-lbl">Yrs Abiding</div></div>
+        <div class="stat-gem"><div class="stat-gem-num">0</div><div class="stat-gem-lbl">Rugs Violated</div></div>
+      </div>
+    </div>
+
+    <hr class="hr-fire">
+
+    <!-- SERVICES -->
+    <div class="box box-yellow" id="services">
+      <div class="box-title" style="color:#ffff00;">✦ Our Services ✦</div>
+      <div style="text-align:center;font-size:11px;color:#999966;margin-bottom:8px;font-style:italic;">Click a service to learn more!! (coming soon)</div>
+      <hr class="hr-fire">
+      <div class="three-col-table">
+        <div class="service-cell">
+          <div class="service-cell-title">🏗️ Rug-Based Storage Architecture</div>
+          <div class="service-cell-body">Our proprietary storage framework binds disparate systems into one coherent infrastructure. It ties everything together!!</div>
+          <div class="service-badge">TIER 1</div>
+        </div>
+        <div class="service-cell">
+          <div class="service-cell-title">🔒 Nihilist Threat Detection</div>
+          <div class="service-cell-body">Adversaries believe in nothing. Our detection framework proves your attackers are not dealing with amateurs. We monitor every lane.</div>
+          <div class="service-badge">SECURITY</div>
+        </div>
+        <div class="service-cell">
+          <div class="service-cell-title">☁️ White Russian Cloud Consulting</div>
+          <div class="service-cell-body">Smooth, layered, and surprisingly resilient. This is not a complicated drink. We blend on-prem control with cloud-scale flexibility.</div>
+          <div class="service-badge">CLOUD</div>
+        </div>
+        <div class="service-cell">
+          <div class="service-cell-title">🎳 Bowling Lane Throughput</div>
+          <div class="service-cell-body">Every packet finds its lane and reaches its destination. Maximum throughput, minimum friction. Nobody gets left behind.</div>
+          <div class="service-badge">NETWORKING</div>
+        </div>
+        <div class="service-cell">
+          <div class="service-cell-title">📋 Compulsive Documentation</div>
+          <div class="service-cell-body">Mark it. Every system, every change, every runbook. Mark it eight, Dude. If it is not documented it did not happen.</div>
+          <div class="service-badge">COMPLIANCE</div>
+        </div>
+        <div class="service-cell">
+          <div class="service-cell-title">🔁 Managed Disaster Recovery</div>
+          <div class="service-cell-body">The data abides. Your critical systems will recover with dignity and without drama. We have seen things.</div>
+          <div class="service-badge">RESILIENCE</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr-rainbow">
+
+    <!-- TESTIMONIALS / GUESTBOOK -->
+    <div class="box box-cyan" id="testimonials">
+      <div class="box-title" style="color:#00ffff;">~~ Guestbook Entries ~~</div>
+      <div style="text-align:center;font-size:11px;color:#669999;margin-bottom:8px;">Sign our guestbook!! We read every entry!!</div>
+      <hr class="hr-ice">
+
+      <div class="testi-entry">
+        <blockquote>"Prior to engaging Evolved Services our storage environment was an embarrassment. They implemented a rug-based architecture that changed everything!! I have not had a single sleepless night since. My important papers are fully protected. 10/10 would recommend!!"</blockquote>
+        <div class="testi-sig">~J. Lebowski~</div>
+        <div class="testi-loc">Philanthropist · Pasadena, CA · Joined 2015</div>
+      </div>
+
+      <div class="testi-entry">
+        <blockquote>"I will say this ONCE. These people know what they are doing. Their network segmentation work was TEXTBOOK. I have been in ops for twenty years and I have never seen a firewall ruleset this clean. They drew a line in the sand and they did NOT cross it."</blockquote>
+        <div class="testi-sig">~W. Sobchak~</div>
+        <div class="testi-loc">Director of Security Operations · North Hollywood · Joined 2015</div>
+      </div>
+
+      <div class="testi-entry">
+        <blockquote>"I just want to say the monitoring dashboards are really something. The uptime!! The visibility!! It is like they really tied the whole observability stack together. :)"</blockquote>
+        <div class="testi-sig">~D. Kerabatsos~</div>
+        <div class="testi-loc">VP of Infrastructure · Encino, CA · Joined 2016</div>
+      </div>
+
+      <hr class="hr-ice">
+      <div style="margin-top:10px;">
+        <div style="font-size:12px;color:#99ccff;font-weight:bold;margin-bottom:6px;">✏️ Sign the Guestbook!!</div>
+        <div class="guestbook-form">
+          <input type="text" placeholder="Your name" />
+          <input type="text" placeholder="Your location (City, State)" />
+          <textarea placeholder="Your message for Evolved Services!! :)"></textarea>
+          <button class="submit-btn" onclick="alert('Thanks for signing!! The data abides. :)')">Submit Entry!!</button>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr-rainbow">
+
+    <!-- TEAM -->
+    <div class="box box-yellow" id="team">
+      <div class="box-title" style="color:#ffff00;">~~ Meet the Team!! ~~</div>
+      <hr class="hr-fire">
+      <div class="two-col-table">
+        <div style="background:#050010;border:1px solid #660066;padding:8px;text-align:center;">
+          <div style="font-size:36px;margin-bottom:6px;">🤵</div>
+          <div style="font-size:13px;font-weight:bold;color:#ffff00;">Jeffrey Lebowski</div>
+          <div style="font-size:11px;color:#ff99ff;margin-bottom:6px;font-style:italic;">Chief Abiding Officer</div>
+          <div style="font-size:11px;color:#ccaaff;line-height:1.5;">Jeffrey ensures that infrastructure just kind of works out. He believes that sometimes the best engineering decision is to take it easy. The infrastructure abides.</div>
+          <div style="margin-top:6px;font-size:10px;color:#9966cc;">📍 Malibu, CA</div>
+        </div>
+        <div style="background:#050010;border:1px solid #660066;padding:8px;text-align:center;">
+          <div style="font-size:36px;margin-bottom:6px;">🎖️</div>
+          <div style="font-size:13px;font-weight:bold;color:#ffff00;">Walter Sobchak</div>
+          <div style="font-size:11px;color:#ff99ff;margin-bottom:6px;font-style:italic;">Head of Security & Compliance</div>
+          <div style="font-size:11px;color:#ccaaff;line-height:1.5;">Walter does not joke about security policy. Every rule exists for a reason. This is NOT Nam. There are rules. He will shut the entire operation DOWN.</div>
+          <div style="margin-top:6px;font-size:10px;color:#9966cc;">📍 North Hollywood, CA</div>
+        </div>
+        <div style="background:#050010;border:1px solid #660066;padding:8px;text-align:center;">
+          <div style="font-size:36px;margin-bottom:6px;">🎳</div>
+          <div style="font-size:13px;font-weight:bold;color:#ffff00;">Donny Kerabatsos</div>
+          <div style="font-size:11px;color:#ff99ff;margin-bottom:6px;font-style:italic;">Head of Network Operations</div>
+          <div style="font-size:11px;color:#ccaaff;line-height:1.5;">Donny keeps the lanes clear. His networking work is quiet and consistent and almost always goes unnoticed until it is not there anymore. The team misses him.</div>
+          <div style="margin-top:6px;font-size:10px;color:#9966cc;">📍 Encino, CA</div>
+        </div>
+        <div style="background:#050010;border:1px solid #660066;padding:8px;text-align:center;">
+          <div style="font-size:36px;margin-bottom:6px;">📋</div>
+          <div style="font-size:13px;font-weight:bold;color:#ffff00;">Brandt</div>
+          <div style="font-size:11px;color:#ff99ff;margin-bottom:6px;font-style:italic;">Chief of Staff</div>
+          <div style="font-size:11px;color:#ccaaff;line-height:1.5;">Brandt handles all operational logistics and client communications. He is very thorough and takes great pride in ensuring nothing is out of place. He prepares the briefings.</div>
+          <div style="margin-top:6px;font-size:10px;color:#9966cc;">📍 Pasadena, CA</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr-rainbow">
+
+    <!-- CONTACT -->
+    <div class="box box-green" id="contact">
+      <div class="box-title" style="color:#00ff00;">~~ Contact Us!! ~~</div>
+      <hr style="border:none;border-top:2px solid #00ff00;margin:8px 0;">
+      <div style="text-align:center;margin-bottom:10px;">
+        <p style="font-size:12px;color:#99ffcc;margin-bottom:8px;">Ready to build infrastructure that abides?? Get in touch!! We are not hard to find. (We are at the bowling alley.)</p>
+        <a href="#" class="email-btn" onclick="alert('Yeah, well, that\'s just, like, your opinion, man.'); return false;">📧 Email Us!!</a>
+        <a href="#" class="email-btn" onclick="alert('The data abides.'); return false;">📅 Schedule Consultation</a>
+      </div>
+      <div style="text-align:center;font-size:11px;color:#669966;font-style:italic;">
+        * Consultation button currently non-functional.<br>
+        Yeah, well, that's just, like, your opinion, man.
+      </div>
+    </div>
+
+    <hr class="hr-rainbow">
+
+    <!-- WEBRING -->
+    <div class="webring">
+      <div style="font-size:12px;font-weight:bold;color:#ff99ff;margin-bottom:4px;">⛓️ Enterprise Infrastructure WebRing ⛓️</div>
+      <div>
+        <a href="#">&lt;&lt; Prev</a>
+        &nbsp;|&nbsp;
+        <a href="#">Random Site</a>
+        &nbsp;|&nbsp;
+        <a href="#">Next &gt;&gt;</a>
+      </div>
+      <div style="font-size:10px;color:#666699;margin-top:4px;">You are site #47 in the ring</div>
+    </div>
+
+    <!-- BADGES -->
+    <div class="badge-row">
+      <div class="badge">🏆 Best Enterprise Site 1998</div>
+      <div class="badge">✅ HTML 2.0 Validated</div>
+      <div class="badge">🌐 Netscape Enhanced</div>
+      <div class="badge">💎 GeoCities Gold Member</div>
+      <div class="badge">🎳 Bowling Certified</div>
+      <div class="badge">🔒 Nihilist-Free Zone</div>
+    </div>
+
+    <!-- HIT COUNTER + FOOTER -->
+    <div style="text-align:center;padding:16px 0;">
+      <div style="font-size:11px;color:#9966cc;margin-bottom:6px;">You are visitor number:</div>
+      <div class="hit-counter" id="counter">004892</div>
+      <div style="margin-top:12px;font-size:10px;color:#666699;line-height:1.8;">
+        © 1995–2025 Evolved Services LLC · All rights reserved<br>
+        Best viewed in Netscape Navigator 4.0 at 800×600 · 256 colors<br>
+        Last updated: <strong style="color:#ffff00;">March 1998</strong><br>
+        <br>
+        <span class="rainbow-slow" style="font-family:'VT323',monospace;font-size:20px;letter-spacing:2px;">THE DATA ABIDES</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let count = 4892;
+    setInterval(() => {
+      count += Math.floor(Math.random() * 3);
+      document.getElementById('counter').textContent = String(count).padStart(6,'0');
+    }, 7000);
+  </script>
+
+</body>
+</html>
